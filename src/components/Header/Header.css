@@ -745,6 +745,14 @@
   min-width: 430px;
 }
 
+.explore-container.depts {
+  display: flex;
+  width: 300px;
+  max-width: max-content;
+  min-width: 300px;
+}
+
+
 .explore-container li{
   color: var(--charcoal);
 }

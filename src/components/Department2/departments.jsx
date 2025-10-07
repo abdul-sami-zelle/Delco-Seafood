@@ -133,7 +133,7 @@ export default function Departments2({ departments, onClick }) {
       )}
 
       <div className="categories_slider">
-        <span className="heading">Shop from Seafood Shop</span>
+        {/* <span className="heading">Shop from Seafood Shop</span> */}
         <Slider ref={sliderRef} {...settings}>
           {departments?.map((cat) => (
             <CategoryContainer

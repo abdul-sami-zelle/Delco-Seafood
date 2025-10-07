@@ -100,13 +100,13 @@ const SaleProducts = ({ scrollToSection }) => {
   return (
     <div
       className="sales-products-container"
-      style={{
-        backgroundColor: container?.bgColor
-          ? container.bgColor.startsWith("#")
-            ? container.bgColor
-            : `#${container.bgColor}`
-          : "transparent",
-      }}
+      // style={{
+      //   backgroundColor: container?.bgColor
+      //     ? container.bgColor.startsWith("#")
+      //       ? container.bgColor
+      //       : `#${container.bgColor}`
+      //     : "transparent",
+      // }}
     >
       {sections?.map((section, index) => {
         const sectionImage = section?.image

@@ -9,7 +9,7 @@ import { LiaTruckMovingSolid } from "react-icons/lia";
 import "./Header.css";
 import { CartContext } from "../../context/addToCart";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { getSalesProductData, getCategories } from "@/lib/api";
+import { getSalesProductData, getCategories, getHeaderDepartments } from "@/lib/api";
 import LocationModal from "../LocationModal/LocationModal";
 import DeliveryModal from "../DeliveryModal/DeliveryModal";
 
@@ -19,6 +19,7 @@ export default function Header({ onDeptClick, onDiscountClick }) {
   const [showDelcoMenu, setShowDelcoMenu] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Delco Farmers");
   const [departments, setDepartments] = useState([]);
+  const [headerDepts, setHeaderDepts] = useState([]);
   const [trendDepartments, setTrendDepartments] = useState([]);
   const [discounts, setDiscounts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -92,6 +93,14 @@ export default function Header({ onDeptClick, onDiscountClick }) {
 
 
   useEffect(() => {
+    async function fetchHeaderDepts() {
+      setLoading(true);
+      const data = await getHeaderDepartments();
+      if (data) {
+        setHeaderDepts(data);
+      }
+      setLoading(false);
+    }
     async function fetchData() {
       setLoading(true);
       const data = await getCategories();
@@ -118,6 +127,7 @@ export default function Header({ onDeptClick, onDiscountClick }) {
     }
     fetchData();
     getDicounts();
+    fetchHeaderDepts();
   }, []);
   return (
     <>
@@ -133,13 +143,18 @@ export default function Header({ onDeptClick, onDiscountClick }) {
                   <HiMenuAlt1 />
                 </button>
               </div>
-              <div className="">
+              <a style={{
+                display:"flex",
+                alignItems:"center",
+                justifyContent:"center"
+              }} href="https://delcofarmersmarket.com">
                 <img
                   src="/assets/Images/header-logo.png"
                   className="header-logo"
-                  alt=""
+                  alt="Delco Farmers Market"
                 />
-              </div>
+              </a>
+
               <div className="search-container">
                 <span
                   className="delco-fresh-btn"
@@ -306,16 +321,31 @@ export default function Header({ onDeptClick, onDiscountClick }) {
           </div>
 
           <span style={{ color: "lightgray", fontSize: "20px" }}>|</span>
+
+
+
+
           <div className="sub-header-left">
+
             <div className="dropdown">
               <a href="#">
-                Aisles <MdKeyboardArrowDown size={13} />
+                Departments <MdKeyboardArrowDown size={13} />
               </a>
               <div className="dropdown-menu">
-                <div className="explore-container">
-                  <div className="" style={{flex:1}}>
+                <div className="explore-container depts">
+                  <div className="" style={{ flex: 1 }}>
                     <ul>
-                      {departments.map((dept) => (
+                      {headerDepts && headerDepts?.map((dept) => (
+                        <li key={dept._id}>
+                          <a href={dept.url}><img style={{ width: "20px", height: "20px", marginRight: "10px" }} src={"https://api.delcofarmersmarket.com" + dept.image} alt="" srcset="" /> {dept.name}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {/* <div className="" style={{ flex: 1 }}>
+                    <ul>
+                      <span>Trending</span>
+                      {trendDepartments.map((dept) => (
                         <li key={dept._id} onClick={() => {
                           onDeptClick(dept._id);   // parent ko inform karega
                         }}>
@@ -323,8 +353,31 @@ export default function Header({ onDeptClick, onDiscountClick }) {
                         </li>
                       ))}
                     </ul>
+                  </div> */}
+                </div>
+              </div>
+            </div>
+
+
+            <div className="dropdown">
+              <a href="#">
+                Aisles <MdKeyboardArrowDown size={13} />
+              </a>
+              <div className="dropdown-menu">
+                <div className="explore-container">
+                  <div className="" style={{ flex: 1 }}>
+                    <ul>
+                      {departments.map((dept) => (
+                        <li key={dept._id} onClick={() => {
+                          onDeptClick(dept._id);   // parent ko inform karega
+                        }}>
+
+                          <img style={{ width: "20px", height: "20px", marginRight: "10px" }} src={"https://api.delcofarmersmarket.com" + dept.image} alt="" srcset="" />  {dept.name}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="" style={{flex:1}}>
+                  <div className="" style={{ flex: 1 }}>
                     <ul>
                       <span>Trending</span>
                       {trendDepartments.map((dept) => (
@@ -385,9 +438,10 @@ export default function Header({ onDeptClick, onDiscountClick }) {
               </div>
             </div>
 
-            <a href="#">Black Friday</a>
             <span style={{ color: "lightgray", fontSize: "20px" }}>|</span>
-            <a href="#">Past Purchases</a>
+            <a href="#">Black Friday</a>
+
+            {/* <a href="#">Past Purchases</a> */}
             {/* <a href="#">Repeat Items</a> */}
           </div>
 
@@ -417,7 +471,7 @@ export default function Header({ onDeptClick, onDiscountClick }) {
             <div className="location">
               Delivery to:{" "}
               <span>
-                Council Bluffs, United States{" "}
+                Council Bluffs, PA{" "}
                 <span className="down-icon">
                   <MdKeyboardArrowDown />
                 </span>

@@ -1,9 +1,10 @@
 .sales-products-container {
   display: flex;
   flex-direction: column;
-  padding: 10px 18px;
-  max-width: 95%;
+  padding: 0px 0px;
+  max-width: 92%;
   margin: 0 auto 0px auto;
+  gap: 10px;
 }
 
 .sales-top-banner {
@@ -25,8 +26,9 @@
   width: 100%;
   background-color: white;
   border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 12px;
+  padding: 16px 12px;
+  gap: 10px;
+  /* margin-bottom: 12px; */
 }
 
 .sales-container-wrapper.full-width {

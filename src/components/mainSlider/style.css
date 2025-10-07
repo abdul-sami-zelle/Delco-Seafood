@@ -1,8 +1,8 @@
 .main_slider {
     /* width: 100%; */
-    /* max-width: 1380px; */
+    max-width: 92%;
     overflow: hidden;
-    margin: 30px 5%;
+    margin: 20px auto;
 }
 .slides_main_slider {
   position: relative;   /* stacked slides */
