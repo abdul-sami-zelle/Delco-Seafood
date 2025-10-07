@@ -1,0 +1,159 @@
+*,
+:after,
+:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap');
+
+body {
+  margin: 0;
+  background-color: #F8F8F9;
+  /* font-family: "Poppins",  sans-serif; */
+  font-weight: 300;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+:root {
+  --white: #ffffff;
+  --peace: #6a733a;
+  /* --peace: #3A5000; */
+  --gray: #9ca7b5;
+  --charcoal: #5b5d64;
+  --border-color: #dfe3e9;
+  --navy-blue: #5b5d64;
+  --light-gray: #f5f5f5;
+  --text-color: #5b5d64;
+  --black: #5b5d64;
+  --text-gray: #5b5d64;
+  --footer-color: #757575;
+  --header-bg: #0000004d;
+  --footer-last: #505050;
+  --charcoal-text: #595959;
+  --white-gray: #F8F8F9;
+
+  --light-green: #929a67;
+  --light-medium-green: #6a733a;
+  --dark-medium-green: #4b5320;
+  --dark-green: #2b310d;
+
+  --fs-10: 10px;
+  --fs-12: 12px;
+  --fs-13: 0.8125rem;
+  --fs-14: 0.875rem;
+  --fs-15: 15px;
+  --fs-16: 1rem;
+  --fs-17: 17px;
+  --fs-18: 18px;
+  --fs-19: 19px;
+  --fs-20: 20px;
+  --fs-22: 22px;
+  --fs-30: 30px;
+  --fs-32: 2rem;
+
+  --font-size--52: 3.25rem;
+
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  --lh-10: 0.625rem;
+  --lh-12: 0.75rem;
+  --lh-14: 0.875rem;
+  --lh-16: 1rem;
+  --lh-18: 1.125rem;
+  --lh-20: 1.25rem;
+  --lh-22: 1.375rem;
+  --lh-24: 1.5rem;
+  --lh-26: 1.625rem;
+  --lh-28: 1.75rem;
+  --lh-30: 1.875rem;
+  --lh-32: 2rem;
+  --lh-34: 2.125rem;
+  --lh-36: 2.25rem;
+  --lh-38: 2.375rem;
+  --lh-40: 2.5rem;
+  --lh-42: 2.625rem;
+
+  --br-8: 0.5rem;
+  --br-6: 6px;
+
+  --le-animation-duration-slow: 0.3s;
+  --le-animation-duration-base: 0.2s;
+  --le-animation-duration-fast: 0.1s;
+
+
+
+
+  --font-size--72: 4.5rem;
+  --font-size--52: 3.25rem;
+  --font-size--48: 3rem;
+  --font-size--42: 2.625rem;
+  --font-size--36: 2rem;
+  --font-size--30: 1.875rem;
+  --font-size--28: 1.75rem;
+  --font-size--26: 1.625rem;
+  --font-size--24: 1.5rem;
+  --font-size--23: 1.4375rem;
+  --font-size--22: 1.375rem;
+  --font-size--20: 1.25rem;
+  --font-size--18: 1.125rem;
+  --font-size--16: 1rem;
+  --font-size--14: 0.875rem;
+  --font-size--13: 0.813rem;
+  --font-size--12: 0.75rem;
+  --font-size--10: 0.6rem;
+
+
+
+  --line-height: 1;
+  --line-height--xx-lg: calc(1.9 * var(--line-height));
+  --line-height--x-lg: calc(1.5 * var(--line-height));
+  --line-height--lg: calc(1.15 * var(--line-height));
+  --line-height--md: calc(1.1 * var(--line-height));
+
+  --font-weight--extra-bold: 800;
+  --font-weight--bold: 700;
+  --font-weight--medium: 600;
+  --font-weight--semi-bold: 500;
+  --font-weight--regular: 400;
+  --font-weight--light: 300;
+  --font-weight--lighter: 100;
+
+
+  --spacing: 1rem;
+  --spacing--xxxx-lg: calc(5 * var(--spacing));
+  --spacing--xxxx-lg-sm: calc(4 * var(--spacing));
+  --spacing--xxx-lg-md: calc(3.5 * var(--spacing));
+  --spacing--xxx-lg: calc(3 * var(--spacing));
+  --spacing--xxx-lg-sm: calc(2.5 * var(--spacing));
+  --spacing--xx-lg: calc(2.25 * var(--spacing));
+  --spacing--x-lg: calc(2 * var(--spacing));
+  --spacing--lg: calc(1.5 * var(--spacing));
+  --spacing--md-lg: calc(1.125 * var(--spacing));
+  --spacing--md: var(--spacing);
+  --spacing--md-sm: calc(0.875 * var(--spacing));
+  --spacing--sm-md: calc(0.75 * var(--spacing));
+  --spacing--sm: calc(0.5 * var(--spacing));
+  --spacing--x-sm-sm: calc(0.375 * var(--spacing));
+  --spacing--x-sm: calc(0.25 * var(--spacing));
+
+
+  --articleCard-width: inherit;
+  --recipeCard-width: inherit;
+  --featureCard-width: inherit;
+
+  --color-gray--30: #ccc;
+  --color-gray--40: #707070;
+  --color-gray--60: #242729;
+  --color-gray--50: #3f3f3f;
+  --color-gray--40: #707070;
+  --color-gray--30: #ccc;
+  --color-gray--20: #e8e8e8;
+  --color-gray--10: #f5f5f5;
+}

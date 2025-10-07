@@ -1,0 +1,53 @@
+.hero-section-main {
+  width: 100%;
+  height: 35vh;
+  display: flex;
+  background-color: var(--dark-medium-green);
+}
+.hero-section-first-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+.hero-section-second-container {
+  width: 50%;
+}
+.hero-section-second-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.hero-section-first-container h1 {
+  color: #fff;
+  margin-top: 0px;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 36px;
+  margin-bottom: 10px;
+  /* font-family:  "Baloo Bhai 2","Poppins";
+  font-optical-sizing: auto; */
+}
+.hero-section-first-container p {
+  color: #fff;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  margin-bottom: 10px;
+  /* width: 70%; */
+}
+.hero-section-first-container span {
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #fff;
+  margin-top: 10px;
+  padding: 1.5vh 2vw;
+  font-size: 16px;
+  line-height: 16px;
+  text-decoration: none;
+  transition: all 0.2s;
+  width: fit-content;
+  cursor: pointer;
+}

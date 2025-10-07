@@ -1,0 +1,258 @@
+.slider-container {
+  display: flex;
+  gap: 0px;
+  width: 100%;
+  /* ❌ fixed height hatao */
+  height: auto;
+}
+
+.slider-left {
+  flex: 6;
+  position: relative;
+  /* ❌ fixed height hatao */
+  height: auto;
+}
+
+.slider-right {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: auto;
+  background-color: var(--peace);
+  padding: 20px;
+  /* ab width nahi barhegi */
+  box-sizing: border-box;
+}
+
+.slider-right.reserved{
+  padding: 15px;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  /* ✅ fill parent ratio */
+}
+
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* ✅ full image visible without zoom */
+  flex-shrink: 0;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.arrow.left {
+  left: 15px;
+}
+
+.arrow.right {
+  right: 15px;
+}
+
+.slider:hover .arrow {
+  opacity: 1;
+}
+
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #dbdbdb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #333;
+}
+
+
+
+.promo-card {
+  display: flex;
+  /* flex: 1;  */
+  min-height: 150px;
+  /* ✅ responsive limit */
+  overflow: hidden;
+  background-color: #19a260;
+}
+
+.promo-text,
+.promo-text2 {
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  /* ✅ responsive padding */
+  text-align: center;
+}
+
+.promo-text {
+  background-color: #19a260;
+  color: white !important;
+}
+
+.promo-text2 {
+  background-color: #f4f3ef;
+  color: #012900;
+}
+
+.promo-text h3,
+.promo-text2 h3 {
+  font-size: clamp(14px, 2vw, 20px);
+  /* ✅ responsive font */
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.promo-img {
+  width: 35%;
+  height: auto;
+}
+
+.promo-img img {
+  width: 100%;
+  height: auto;
+  /* ✅ no cutting */
+  object-fit: contain;
+  /* or cover if you want crop */
+}
+
+
+.slider-right h2 {
+  color: #fff;
+  font-size: 26px;
+  line-height: 36px;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-baloo-bhai);
+  width: 85%;
+  text-align: left;
+}
+
+.slider-right p {
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-weight: 300;
+  width: 85%;
+  text-align: left;
+}
+
+.slider-right p.reserved{
+  font-size: 14px;
+  line-height: 22px;
+  width: 100%;
+}
+
+.slider-right h2.reserved {
+  font-size: 24px;
+  line-height: 32px;
+  width: 100%;
+}
+
+.slider-right-inner{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 7px;
+  height: 100%;
+}
+
+.slider-right-inner button{
+  padding: 10px 30px;
+  cursor: pointer;
+  border: 1px solid white;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  color: #fff;
+  transition: all 0.1s;
+  margin-top: 20px;
+  &:hover{
+    background-color: #3A5000;
+    border: 1px solid #3A5000;
+  }
+  
+}
+
+/* Fade-in animation for text */
+/* .slider-right h2,
+.slider-right p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+} */
+
+.slider-right .fade-active {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
+
+@media (max-width: 1430px) {
+.slider-right p {
+  font-size: 14px;
+  line-height: 18px;
+  width: 90%;
+}
+.slider-right-inner button{
+  margin-top: 15px;
+}
+}
+
+@media (max-width: 1260px) {
+  .slider-right{
+    padding: 15px;
+  }
+  .slider-right-inner button{
+  margin-top: 10px;
+  padding: 5px 20px;
+}
+.slider-right-inner{
+  gap: 4px;
+}
+.slider-right p {
+  width: 95%;
+  font-size: 12px;
+  line-height: 14px;
+}
+}

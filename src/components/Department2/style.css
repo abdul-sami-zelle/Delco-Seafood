@@ -1,0 +1,82 @@
+.categories_slider_wrapper{
+  position: relative;
+  max-width: 95%; 
+  margin: 0 auto;
+
+}
+
+.categories_slider {
+  /* width: 100%; */
+  margin: 20px auto;
+  position: relative;
+    display: flex;
+  flex-direction: column;
+  
+}
+
+.categories_slider > .heading {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.category_card {
+  padding: 4px;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+.category_card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  /* border: 1px solid #ddd; */
+box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.custom-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    background: #4B532090;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    /* border-radius: 50%; */
+    border-radius: 5px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    font-size: 16px;
+    transition: all 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    z-index: 999;
+    transition: all 0.3s;
+    z-index: 9999 !important;  
+    &:hover{
+        background: #4B5320;
+    }
+}
+
+
+.custom-arrow:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.custom-next {
+  right: -5px; /* arrow thoda bahar */
+}
+
+.custom-prev {
+  left: -5px; /* arrow thoda bahar */
+}
+
+
+.slick-track{
+  margin-left: 0 !important;
+}
